@@ -1,12 +1,23 @@
-import React, { component } from 'react';
+import {render} from 'react-dom';
+import React, {Component} from 'react';
+import Menu from './menu.jsx';
 
-export default class App extends React.Component{
-  constructor(props){
-    super(props)
+export default class Main extends Component {
+  constructor() {
+    super();
   }
-  render(){
-    return(
-      <div> Hello World </div>
-    );
+
+  render() {
+    return (
+      <div className="container">
+        <Menu/> {this.props.children}
+        <div className="intro-text">
+      Have any ideas of what you
+      would like to do in your lifetime.
+      Get Started with
+      <p style={{"color": 'orange'}}>ADVENTURES. </p>
+      </div>
+      </div>
+    )
   }
 }
